@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 
   const { address, connectWallet } = useWeb3();
 
-  const welcomeUser = (userName, toastHandler = toast) => {
+  const welcomeUser = (userName: string, toastHandler = toast) => {
     toastHandler.success(
       `Welcome back${userName !== 'Unnamed' ? ` ${userName}` : ''}!`,
       {
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
       }
 
       const result = await client.createIfNotExists(userDoc);
-
+      welcomeUser(result.userName);
     })();
 
     return () => {
@@ -54,6 +54,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={style.wrapper}>
+      <Toaster position='top-center' reverseOrder={false}></Toaster>
       {address ? (
         <>
           <Header></Header>
