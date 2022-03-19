@@ -106,7 +106,7 @@ export default function Collection({ }: Props) {
     useEffect(() => {
         if (!marketPlaceModule) return
 
-        (async () => {
+        (async () => {            
             setListings(await marketPlaceModule.getAllListings() as any)
         })();
 

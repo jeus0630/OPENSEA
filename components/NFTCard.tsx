@@ -28,10 +28,10 @@ const style = {
 
 export default function NFTCard({ nftItem, title, listings }: Props) {
     const [isListed, setIsListed] = useState(false)
-    const [price, setPrice] = useState(0)
+    const [price, setPrice] = useState(0.01)
 
     useEffect(() => {
-        const listing = listings?.find((listing) => listing.asset.id === nftItem.id)
+        const listing = listings?.find((listing) => listing.asset.id === nftItem?.id)
         if (listing) {
             setIsListed(true)
             setPrice(listing.buyoutCurrencyValuePerToken.displayValue)
@@ -43,19 +43,19 @@ export default function NFTCard({ nftItem, title, listings }: Props) {
             className={style.wrapper}
             onClick={() => {
                 Router.push({
-                    pathname: `/nfts/${nftItem.id}`,
+                    pathname: `/nfts/${nftItem?.id}`,
                     query: { isListed: isListed },
                 })
             }}
         >
             <div className={style.imgContainer}>
-                <img src={nftItem.image} alt={nftItem.name} className={style.nftImg} />
+                <img src={nftItem?.image} alt={nftItem?.name} className={style.nftImg} />
             </div>
             <div className={style.details}>
                 <div className={style.info}>
                     <div className={style.infoLeft}>
                         <div className={style.collectionName}>{title}</div>
-                        <div className={style.assetName}>{nftItem.name}</div>
+                        <div className={style.assetName}>{nftItem?.name}</div>
                     </div>
                     {isListed && (
                         <div className={style.infoRight}>
@@ -75,7 +75,7 @@ export default function NFTCard({ nftItem, title, listings }: Props) {
                     <span className={style.likeIcon}>
                         <BiHeart />
                     </span>{' '}
-                    {nftItem.likes}
+                    {nftItem?.likes}
                 </div>
             </div>
         </div>

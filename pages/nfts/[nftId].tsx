@@ -21,8 +21,11 @@ const style = {
 export default function Nft({ }: Props) {
 
     const { provider } = useWeb3()
-    const [selectedNft, setSelectedNft] = useState<any>()
-    const [listings, setListings] = useState<any>()
+    const [selectedNft, setSelectedNft] = useState<any>();
+    const [listings, setListings] = useState<any>();
+    const [isListed, setIsListed] = useState('');
+
+
     const router = useRouter()
 
     const nftModule = useMemo(() => {
@@ -30,9 +33,9 @@ export default function Nft({ }: Props) {
 
         const sdk = new ThirdwebSDK(
             provider.getSigner(),
-            'https://rinkeby.infura.io/v3/a464b9152d8c466c8a94a514fce8e837'
+            'https://eth-rinkeby.alchemyapi.io/v2/mhpgUgCc0OqnPxqLHl7nhNL-3LcRjAPO'
         )
-        return sdk.getNFTModule('0x66a576A977b7Bccf510630E0aA5e450EC11361Fa')
+        return sdk.getNFTModule('0xD1c8f79d37A6ddABe2E5d2fc59984082d04caef5')
     }, [provider])
 
     useEffect(() => {
@@ -40,30 +43,38 @@ export default function Nft({ }: Props) {
             ; (async () => {
                 const nfts = await nftModule.getAll()
 
-                const selectedNftItem = nfts.find((nft) => nft.id === router.query.nftId)
+                const selectedNftItem = nfts.find((nft) => nft.id === router.query.nftId);
 
-                setSelectedNft(selectedNftItem)
+                if (selectedNftItem) setSelectedNft(selectedNftItem)
+
             })()
+
+        const isListed = router.query.isListed as string;
+
+        setIsListed(isListed);
     }, [nftModule])
 
-    const marketPlaceModule = useMemo(() => {
+    const marketPlaceModule: any = useMemo(() => {
         if (!provider) return
 
         const sdk = new ThirdwebSDK(
             provider.getSigner(),
-            'https://rinkeby.infura.io/v3/a464b9152d8c466c8a94a514fce8e837'
+            'https://eth-rinkeby.alchemyapi.io/v2/mhpgUgCc0OqnPxqLHl7nhNL-3LcRjAPO'
         )
 
         return sdk.getMarketplaceModule(
-            '0x93A771F7ce845C33381f677489cF21a5964EDD0b'
+            '0x0658A5e6F1ea367B7b6612a02376cD0fd2da377f'
         )
     }, [provider])
 
     useEffect(() => {
-        if (!marketPlaceModule) return
-            ; (async () => {
-                setListings(await marketPlaceModule.getAllListings())
-            })()
+        if (!marketPlaceModule) return;
+
+        (async () => {
+
+            setListings(await marketPlaceModule.getAllListings())
+        })()
+
     }, [marketPlaceModule])
 
     return (
@@ -78,7 +89,7 @@ export default function Nft({ }: Props) {
                         <div className={style.detailsContainer}>
                             <GeneralDetails selectedNft={selectedNft} />
                             <Purchase
-                                isListed={router.query.isListed}
+                                isListed={isListed}
                                 selectedNft={selectedNft}
                                 listings={listings}
                                 marketPlaceModule={marketPlaceModule}
