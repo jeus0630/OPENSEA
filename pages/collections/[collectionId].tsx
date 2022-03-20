@@ -67,7 +67,7 @@ export default function Collection({ }: Props) {
 
         const sdk = new ThirdwebSDK(
             provider.getSigner(),
-            'https://eth-rinkeby.alchemyapi.io/v2/mhpgUgCc0OqnPxqLHl7nhNL-3LcRjAPO'
+            
         )
 
         return sdk.getNFTModule(collectionId);
@@ -94,7 +94,7 @@ export default function Collection({ }: Props) {
 
         const sdk = new ThirdwebSDK(
             provider.getSigner(),
-            'https://eth-rinkeby.alchemyapi.io/v2/mhpgUgCc0OqnPxqLHl7nhNL-3LcRjAPO'
+            
         )
 
         return sdk.getMarketplaceModule(

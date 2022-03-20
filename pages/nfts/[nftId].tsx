@@ -33,7 +33,7 @@ export default function Nft({ }: Props) {
 
         const sdk = new ThirdwebSDK(
             provider.getSigner(),
-            'https://eth-rinkeby.alchemyapi.io/v2/mhpgUgCc0OqnPxqLHl7nhNL-3LcRjAPO'
+            
         )
         return sdk.getNFTModule('0xD1c8f79d37A6ddABe2E5d2fc59984082d04caef5')
     }, [provider])
@@ -59,7 +59,7 @@ export default function Nft({ }: Props) {
 
         const sdk = new ThirdwebSDK(
             provider.getSigner(),
-            'https://eth-rinkeby.alchemyapi.io/v2/mhpgUgCc0OqnPxqLHl7nhNL-3LcRjAPO'
+            
         )
 
         return sdk.getMarketplaceModule(
