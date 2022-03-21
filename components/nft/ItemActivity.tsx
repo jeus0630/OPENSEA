@@ -37,20 +37,20 @@ export default function ItemActivity({ }: Props) {
                 </div>
             </div>
             {toggle && (
-                <div className={style.activityTable}>
+                <div>
                     <div className={style.filter}>
                         <div className={style.filterTitle}>Filter</div>
-                        <div className={style.filterIcon}>
+                        <div>
                             {' '}
                             <AiOutlineDown />{' '}
                         </div>
                     </div>
                     <div className={style.tableHeader}>
-                        <div className={`${style.tableHeaderElement} flex-[2]`}>Event</div>
-                        <div className={`${style.tableHeaderElement} flex-[2]`}>Price</div>
-                        <div className={`${style.tableHeaderElement} flex-[3]`}>From</div>
-                        <div className={`${style.tableHeaderElement} flex-[3]`}>To</div>
-                        <div className={`${style.tableHeaderElement} flex-[2]`}>Date</div>
+                        <div className={`flex-[2]`}>Event</div>
+                        <div className={`flex-[2]`}>Price</div>
+                        <div className={`flex-[3]`}>From</div>
+                        <div className={`flex-[3]`}>To</div>
+                        <div className={`flex-[2]`}>Date</div>
                     </div>
                     {dummyEvents.map((event, id) => (
                         <EventItem key={id} event={event} />

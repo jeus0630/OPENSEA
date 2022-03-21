@@ -3,7 +3,7 @@ import { BsFillCartFill } from 'react-icons/bs'
 
 type Props = {
   event: {
-    price: string;
+    price: number;
     from: string;
     to: string;
     date: string;
