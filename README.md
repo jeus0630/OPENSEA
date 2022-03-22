@@ -1,27 +1,19 @@
-# Next.js + Tailwind CSS Example
+# Opensea Blockchain Clone App
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+**Opensea Blockchain Clone App**은 Opensea의 기능들을 클론 코딩한 프로젝트 입니다.  
+**MetaMask**를 통해 결제가 가능하며 **thirdweb**에서 상품 관리가 가능합니다.  
+**Sanity**로 구현된 관리자 페이지에서 User 관리가 가능합니다.
 
-## Preview
+## Stacks
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+<img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=Next.js&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/><img src="https://img.shields.io/badge/Thirdweb-000000?style=flat-square&logo=&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/Sanity-000000?style=flat-square&logo=&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/MetaMask-000000?style=flat-square&logo=&logoColor=white"/>&nbsp;
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## Features
 
-## Deploy your own
+실제 프로젝트의 동작을 자세하게 설명해 놓았습니다.  
+[여기](https://spicy-damselfly-bd9.notion.site/Opensea-Blockchain-Clone-App-b82c1a3d407843fba4448bbb949cce59)를 클릭해주세요!
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+## Contributing
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Pull requests는 언제나 환영입니다.  
+Major한 변경들에 대해서는 어떤 부분이 개선되어야 할지 토론을 위해 이슈를 먼저 생성해 주세요.
