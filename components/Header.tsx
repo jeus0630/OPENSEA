@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { AiOutlineSearch } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import { MdOutlineAccountBalanceWallet } from 'react-icons/md'
+import Head from 'next/head';
 
 type Props = {}
 
@@ -22,33 +23,38 @@ const style = {
 
 export default function Header({ }: Props) {
     return (
-        <div className={style.wrapper}>
-            <Link href={"/"}>
-                <div className={style.logoContainer}>
-                    <Image src={openseaLogo} width={40} height={40}></Image>
-                    <div className={style.logoText}>Opensea</div>
-                </div>
-            </Link>
-            <div className={style.searchBar}>
-                <div className={style.searchIcon}>
-                    <AiOutlineSearch></AiOutlineSearch>
-                </div>
-                <input type="text" className={style.searchInput} placeholder='Search items, collections, and accounts' />
-            </div>
-            <div className={style.headerItems}>
-                <Link href="/collections/0xD1c8f79d37A6ddABe2E5d2fc59984082d04caef5">
-                    <div className={style.headerItem}> Collections </div>
+        <>
+            <Head>
+                <title>Opensea</title>
+            </Head>
+            <div className={style.wrapper}>
+                <Link href={"/"}>
+                    <div className={style.logoContainer}>
+                        <Image src={openseaLogo} width={40} height={40}></Image>
+                        <div className={style.logoText}>Opensea</div>
+                    </div>
                 </Link>
-                <div className={style.headerItem}> Stats </div>
-                <div className={style.headerItem}> Resources </div>
-                <div className={style.headerItem}> Create </div>
-                <div className={style.headerIcon}>
-                    <CgProfile></CgProfile>
+                <div className={style.searchBar}>
+                    <div className={style.searchIcon}>
+                        <AiOutlineSearch></AiOutlineSearch>
+                    </div>
+                    <input type="text" className={style.searchInput} placeholder='Search items, collections, and accounts' />
                 </div>
-                <div className={style.headerIcon}>
-                    <MdOutlineAccountBalanceWallet></MdOutlineAccountBalanceWallet>
+                <div className={style.headerItems}>
+                    <Link href="/collections/0xD1c8f79d37A6ddABe2E5d2fc59984082d04caef5">
+                        <div className={style.headerItem}> Collections </div>
+                    </Link>
+                    <div className={style.headerItem}> Stats </div>
+                    <div className={style.headerItem}> Resources </div>
+                    <div className={style.headerItem}> Create </div>
+                    <div className={style.headerIcon}>
+                        <CgProfile></CgProfile>
+                    </div>
+                    <div className={style.headerIcon}>
+                        <MdOutlineAccountBalanceWallet></MdOutlineAccountBalanceWallet>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
